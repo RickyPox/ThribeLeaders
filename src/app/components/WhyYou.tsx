@@ -1,7 +1,7 @@
 export default function WhyYou (){
 
     return(
-        <div>
+        <div className="flex flex-col h-full justify-center">
             <h1 className="uppercase stroke_text text-white primary_font text-[26px]">You're making noise</h1>
             <p className="uppercase primary_font text-white text-[57px]">
             Handpicked <span className="purple">Mavericks</span> Shaping the Future of Web3 </p>
