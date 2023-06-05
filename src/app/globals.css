@@ -1,3 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+
+@font-face {
+    font-family: Akira;
+    src: 
+    url("/fonts/Akira.otf") format("truetype");
+}
+
+body{
+    background: black;
+    color:white
+}
+
+.primary_font{
+    font-family: "Akira";
+}
+
+.stroke_text{
+    -webkit-text-stroke: 1px white;
+    color:transparent
+}
+
+.purple{
+    color:#8870BB;
+}
+
+.DmSans{
+    font-family: 'DM Sans', sans-serif;
+}
+
+.progress-bar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: #84799A;
+    transform-origin: 0%;
+    z-index: -10;
+    margin-left: 120px;
+  }
