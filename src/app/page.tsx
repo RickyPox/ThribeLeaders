@@ -1,5 +1,4 @@
 "use client"
-import { useScroll, motion } from "framer-motion";
 import BookCall from "./components/BookCall";
 import Manifesto from "./components/Manifesto";
 import Navbar from "./components/Navbar";
@@ -46,6 +45,9 @@ export default function Home() {
           style={{ clipPath: `inset(${scrollY}px 0px -${scrollY}px 0px)` }} >
             <WeAre></WeAre>
             <OurGoal></OurGoal>
+            <Manifesto></Manifesto>
+            <WhyYou></WhyYou>
+            <BookCall></BookCall>
           </div>
         </div>
       </section>

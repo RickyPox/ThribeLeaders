@@ -10,7 +10,7 @@ export default function BookCall (){
                 <p className="uppercase primary_font text-white text-[57px] ">Ready to your tribe? </p>
                     <div className="flex items-center px-[30px] text-[13px] DmSans bg-[#8870BB] rounded-[8px]">
                         <a>
-                            Submite Details
+                            Submit Details
                         </a>
                     </div>
                 </div>
