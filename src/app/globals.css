@@ -43,13 +43,7 @@ body{
     top: 0;
     left: 0;
     right: 0;
-    height: 120px;
     background: #84799A;
     transform-origin: 0%;
     z-index: -10;
-    margin-left: 120px;
-}
-
-.clipped{
-    clip-path: inset(0px 0px 0px 0px);
 }
