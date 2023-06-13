@@ -25,9 +25,9 @@ export default function Home() {
 
 
   return (
-    <div className="mt-[60px]">
+    <div className="mt-[5vh] h-screen">
       <div className="fixed">
-        <h1 className="uppercase primary_font text-center md:text-[26px] text-[18px] h-[100px] w-[90vw] mx-auto">
+        <h1 className="uppercase primary_font text-center md:text-[26px] text-[18px] h-[10vh] w-[90vw] mx-auto">
           CONGRATULATIONS ON YOUR INVITE !
         </h1>
         <div className="w-screen flex justify-center box_container">
@@ -39,9 +39,8 @@ export default function Home() {
       </div>
 
       <section className="flex justify-center w-screen sections_content">
-        <div className="h-[80vh] w-[90vw] lg:pl-[120px] md:pl-[80px] pl-[40px] md:pr-[50px] pr-[10px] lg:pt-[120px] md:pt-[80px] pt-[40px] mt-[100px] ">
-          <p></p>
-          <div className="h-full lg:ml-[80px] ml-[20px]"
+        <div className="h-[80vh] w-[90vw] lg:pl-[120px] md:pl-[80px] pl-[40px] md:pr-[50px] pr-[10px] lg:pt-[120px] md:pt-[80px] pt-[40px] mt-[10vh] ">
+          <div className="h-full lg:ml-[80px] ml-[20px] space-y-[250px] mb-[150px]"
           style={{ clipPath: `inset(${scrollY}px 0px -${scrollY}px 0px)` }} >
           <WeAre></WeAre>
           <OurGoal></OurGoal>

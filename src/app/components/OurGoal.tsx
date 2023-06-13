@@ -3,7 +3,7 @@ export default function OurGoal(){
 
 
     return(
-        <div className="flex flex-col h-full justify-center space-y-[20px]">
+        <div className="flex flex-col justify-center space-y-[20px]">
             <h1 className="uppercase stroke_text text-white primary_font lg:text-[26px] text-[18px]">whats the point?</h1>
             <p className="uppercase primary_font text-white 2xl:text-[57px] xl:text-[48px] lg:text-[42px] text-[22px] break-words">
             <span className="purple">Trailblazing</span> Leaders and Propel Your journey </p>
