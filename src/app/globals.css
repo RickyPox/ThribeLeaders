@@ -11,14 +11,18 @@
     url("/fonts/Akira.otf") format("truetype");
 }
 
-html{
-    scroll-behavior: smooth;
-}
-
 body{
     background: black;
     color:white;
     overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth!important;
+    }
+
+h1{
+    line-height: 55px;
 }
 
 .primary_font{
@@ -43,7 +47,7 @@ body{
     top: 0;
     left: 0;
     right: 0;
-    background: #84799A;
+    background: #8870BB;
     transform-origin: 0%;
     z-index: -10;
 }
