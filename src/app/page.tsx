@@ -93,7 +93,7 @@ export default function Home() {
           <div ref={containerRef} className="lg:ml-[80px] space-y-[250px] mb-[150px] bg-yellow-300"
             style={{ clipPath: `inset(${scrollY}px 0px ${containerHeight - clipHeight - scrollY }px 0px)` }} >
               <WeAre></WeAre>
-              <div className="fadeIn">
+              <div ref={sectionRef} className="fadeIn">
                 <OurGoal></OurGoal>
               </div>
               <Manifesto></Manifesto>
