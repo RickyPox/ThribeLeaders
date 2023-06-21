@@ -7,7 +7,7 @@ import WeAre from "./components/WeAre";
 import WhyYou from "./components/WhyYou";
 import { useEffect, useRef, useState } from "react";
 import { useIntersection } from "react-use";
-import gsap from "gsap"
+import {gsap} from "gsap"
 
 export default function Home() {
 
@@ -16,38 +16,7 @@ export default function Home() {
   const [containerHeight, setContainerHeight] = useState (0);
   const clipRef = useRef<HTMLDivElement | null>(null);
   const [clipHeight, setClipHeight] = useState(0);
-
-  const sectionRef = useRef(null);
-
-  const intersection = useIntersection(sectionRef, {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.5
-  });
-
-    const fadeIn = (element: gsap.TweenTarget) => {
-    gsap.to(element,{
-      opacity: 1,
-      y: 0,
-      ease: "power4.out",
-      stagger:{
-        amount: 0.3 
-      }
-    })
-  } 
-  const fadeOut = (element: gsap.TweenTarget) => {
-    gsap.to(element,{
-      opacity: 0,
-      y: 0,
-      ease: "power4.out",
-    })
-  }
-
-  intersection && intersection.intersectionRatio < 0.5 || intersection && intersection.intersectionRatio > 1 ?
-  fadeOut(".fadeIn") : fadeIn(".fadeIn")
-
   
-
   useEffect(() => {
     if(containerRef.current){
     const height = containerRef.current.offsetHeight;
@@ -72,6 +41,39 @@ export default function Home() {
     };
   }, []);
 
+
+  const sectionRef = useRef(null);
+
+  const intersection = useIntersection(sectionRef, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5
+  });
+
+  if(intersection){
+    const fadeIn = (element: gsap.TweenTarget) => {
+    gsap.to(element,{
+      y: -60,
+      opacity: 1,
+      ease: "power4.out",
+      stagger:{
+        amount: 0.3 
+      }
+    })
+  } 
+  const fadeOut = (element: gsap.TweenTarget) => {
+    gsap.to(element,{
+      y: -20,
+      opacity: 0,
+      ease: "power4.out",
+    })
+  } 
+
+  intersection && intersection.intersectionRatio < 0.5 ?
+  fadeOut(".fadeIn") : fadeIn(".fadeIn")
+}
+  
+
   return (
     <div className="pt-[5vh] h-screen">
       <div className="fixed">
@@ -90,12 +92,10 @@ export default function Home() {
         <div ref={clipRef} className="h-[80vh] w-[90vw] lg:pl-[120px] md:pl-[80px] pl-[10px] md:pl:[40px] md:pr-[50px] pr-[10px] lg:pt-[120px] md:pt-[80px] pt-[40px]">
           <div ref={containerRef} className="lg:ml-[80px] space-y-[250px] mb-[150px] bg-yellow-300"
             style={{ clipPath: `inset(${scrollY}px 0px ${containerHeight - clipHeight - scrollY }px 0px)` }} >
-              <div ref={sectionRef} className="fadeIn"> 
-                <WeAre></WeAre>
+              <WeAre></WeAre>
+              <div className="fadeIn">
+                <OurGoal></OurGoal>
               </div>
-
-              <OurGoal></OurGoal>
-
               <Manifesto></Manifesto>
               <WhyYou></WhyYou>
               <BookCall></BookCall>
