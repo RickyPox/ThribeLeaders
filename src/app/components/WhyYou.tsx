@@ -3,7 +3,7 @@ export default function WhyYou (){
     return(
         <div className="flex flex-col justify-center space-y-[20px]" id="WhyYou">
             <h2 className="uppercase stroke_text text-white primary_font lg:text-[26px] text-[18px]">You're making noise</h2>
-            <h1 className="uppercase primary_font text-white 2xl:text-[57px] xl:text-[48px] lg:text-[42px] text-[22px]">
+            <h1 className="uppercase primary_font text-white 2xl:text-[72px] xl:text-[60px] lg:text-[46px] md:text-[30px] text-[22px] 2xl:leading-[50px] xl:leading-[42px] lg:leading-[32px] md:leading-[24px] leading-[20px]">
             Handpicked <span className="purple">Mavericks</span> Shaping the Future of Web3 </h1>
             <div className="text-[#A8A8A8] flex flex-col md:flex-row md:space-x-[25px] space-y-[25px] md:space-y-[0px] mt-[50px]">
             <p className="xl:text-[22px] lg:text-[18px] text-[14px] w-auto md:w-1/2">

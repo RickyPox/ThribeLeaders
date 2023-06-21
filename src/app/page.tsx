@@ -6,15 +6,47 @@ import OurGoal from "./components/OurGoal";
 import WeAre from "./components/WeAre";
 import WhyYou from "./components/WhyYou";
 import { useEffect, useRef, useState } from "react";
+import { useIntersection } from "react-use";
+import gsap from "gsap"
 
 export default function Home() {
 
   const [scrollY, setScrollY] = useState(0);
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const [containerHeight, setContainerHeight] = useState (0)
-
+  const [containerHeight, setContainerHeight] = useState (0);
   const clipRef = useRef<HTMLDivElement | null>(null);
-  const [clipHeight, setClipHeight] = useState(0)
+  const [clipHeight, setClipHeight] = useState(0);
+
+  const sectionRef = useRef(null);
+
+  const intersection = useIntersection(sectionRef, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5
+  });
+
+    const fadeIn = (element: gsap.TweenTarget) => {
+    gsap.to(element,{
+      opacity: 1,
+      y: 0,
+      ease: "power4.out",
+      stagger:{
+        amount: 0.3 
+      }
+    })
+  } 
+  const fadeOut = (element: gsap.TweenTarget) => {
+    gsap.to(element,{
+      opacity: 0,
+      y: 0,
+      ease: "power4.out",
+    })
+  }
+
+  intersection && intersection.intersectionRatio < 0.5 || intersection && intersection.intersectionRatio > 1 ?
+  fadeOut(".fadeIn") : fadeIn(".fadeIn")
+
+  
 
   useEffect(() => {
     if(containerRef.current){
@@ -22,9 +54,6 @@ export default function Home() {
     setContainerHeight(height);
   }
   if(clipRef.current){
-
-
-
     const clipRefComputedStyle = window.getComputedStyle(clipRef.current, null)
     let clipRefHeight = clipRef.current.clientHeight;
     clipRefHeight -=
@@ -59,10 +88,14 @@ export default function Home() {
 
       <section className="flex justify-center w-screen h-full mt-[10vh]">
         <div ref={clipRef} className="h-[80vh] w-[90vw] lg:pl-[120px] md:pl-[80px] pl-[10px] md:pl:[40px] md:pr-[50px] pr-[10px] lg:pt-[120px] md:pt-[80px] pt-[40px]">
-          <div ref={containerRef} className="lg:ml-[80px] space-y-[250px] mb-[150px]"
-            style={{ clipPath: `inset(${scrollY}px 0px ${containerHeight - clipHeight - scrollY }px 0px)` }} > 
-              <WeAre></WeAre>
+          <div ref={containerRef} className="lg:ml-[80px] space-y-[250px] mb-[150px] bg-yellow-300"
+            style={{ clipPath: `inset(${scrollY}px 0px ${containerHeight - clipHeight - scrollY }px 0px)` }} >
+              <div ref={sectionRef} className="fadeIn"> 
+                <WeAre></WeAre>
+              </div>
+
               <OurGoal></OurGoal>
+
               <Manifesto></Manifesto>
               <WhyYou></WhyYou>
               <BookCall></BookCall>
