@@ -15,10 +15,12 @@ body{
     background: black;
     color:white;
     overflow-x: hidden;
+    margin: 0px;
 }
 
 html {
     scroll-behavior: smooth!important;
+    margin: 0px;
     }
 
 .primary_font{

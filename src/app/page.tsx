@@ -3,11 +3,10 @@ import BookCall from "./components/BookCall";
 import Manifesto from "./components/Manifesto";
 import Navbar from "./components/Navbar";
 import OurGoal from "./components/OurGoal";
+import { Reveal } from "./components/Reveal";
 import WeAre from "./components/WeAre";
 import WhyYou from "./components/WhyYou";
 import { useEffect, useRef, useState } from "react";
-import { useIntersection } from "react-use";
-import {gsap} from "gsap"
 
 export default function Home() {
 
@@ -30,7 +29,6 @@ export default function Home() {
       parseFloat(clipRefComputedStyle.paddingBottom)
       setClipHeight(clipRefHeight)
   }
-
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
@@ -42,37 +40,7 @@ export default function Home() {
   }, []);
 
 
-  const sectionRef = useRef(null);
 
-  const intersection = useIntersection(sectionRef, {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.5
-  });
-
-  if(intersection){
-    const fadeIn = (element: gsap.TweenTarget) => {
-    gsap.to(element,{
-      y: -60,
-      opacity: 1,
-      ease: "power4.out",
-      stagger:{
-        amount: 0.3 
-      }
-    })
-  } 
-  const fadeOut = (element: gsap.TweenTarget) => {
-    gsap.to(element,{
-      y: -20,
-      opacity: 0,
-      ease: "power4.out",
-    })
-  } 
-
-  intersection && intersection.intersectionRatio < 0.5 ?
-  fadeOut(".fadeIn") : fadeIn(".fadeIn")
-}
-  
 
   return (
     <div className="pt-[5vh] h-screen">
@@ -90,15 +58,13 @@ export default function Home() {
 
       <section className="flex justify-center w-screen h-full mt-[10vh]">
         <div ref={clipRef} className="h-[80vh] w-[90vw] lg:pl-[120px] md:pl-[80px] pl-[10px] md:pl:[40px] md:pr-[50px] pr-[10px] lg:pt-[120px] md:pt-[80px] pt-[40px]">
-          <div ref={containerRef} className="lg:ml-[80px] space-y-[250px] mb-[150px] bg-yellow-300"
+          <div ref={containerRef} className="lg:ml-[80px] space-y-[250px] mb-[150px]"
             style={{ clipPath: `inset(${scrollY}px 0px ${containerHeight - clipHeight - scrollY }px 0px)` }} >
-              <WeAre></WeAre>
-              <div ref={sectionRef} className="fadeIn">
+                <WeAre></WeAre>
                 <OurGoal></OurGoal>
-              </div>
-              <Manifesto></Manifesto>
-              <WhyYou></WhyYou>
-              <BookCall></BookCall>
+                <Manifesto></Manifesto>
+                <WhyYou></WhyYou>
+                <BookCall></BookCall>
           </div>
         </div>
       </section>

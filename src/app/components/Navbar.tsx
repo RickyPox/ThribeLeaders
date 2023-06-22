@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { motion, useScroll } from "framer-motion";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
 const navigation = [
