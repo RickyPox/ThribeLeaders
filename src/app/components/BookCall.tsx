@@ -4,8 +4,8 @@ import { Reveal } from "./Reveal";
 export default function BookCall (){
 
     return(
-        <div className="flex flex-col h-full justify-center" id="BookCall">
-            <div className=" mt-[320px] py-[50px] border-t-[1px] border-white">
+        <div className="flex flex-col h-full justify-center">
+            <div className=" mb-[100px] mt-[320px] py-[50px] border-t-[1px] border-white">
                 <Reveal>
                     <p className="DMSans lg:text-[26px] text-[18px]">so...</p>
                 </Reveal>

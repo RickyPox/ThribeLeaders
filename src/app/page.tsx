@@ -3,8 +3,8 @@ import BookCall from "./components/BookCall";
 import Manifesto from "./components/Manifesto";
 import Navbar from "./components/Navbar";
 import OurGoal from "./components/OurGoal";
-import { Reveal } from "./components/Reveal";
 import WeAre from "./components/WeAre";
+import WhatWeDoList from "./components/WhatWeDoList";
 import WhyYou from "./components/WhyYou";
 import { useEffect, useRef, useState } from "react";
 
@@ -15,7 +15,7 @@ export default function Home() {
   const [containerHeight, setContainerHeight] = useState (0);
   const clipRef = useRef<HTMLDivElement | null>(null);
   const [clipHeight, setClipHeight] = useState(0);
-  
+
   useEffect(() => {
     if(containerRef.current){
     const height = containerRef.current.offsetHeight;
@@ -39,6 +39,7 @@ export default function Home() {
     };
   }, []);
 
+  const ComponentRef = useRef(null);
 
 
 
@@ -60,11 +61,12 @@ export default function Home() {
         <div ref={clipRef} className="h-[80vh] w-[90vw] lg:pl-[120px] md:pl-[80px] pl-[10px] md:pl:[40px] md:pr-[50px] pr-[10px] lg:pt-[120px] md:pt-[80px] pt-[40px]">
           <div ref={containerRef} className="lg:ml-[80px] space-y-[250px] mb-[150px]"
             style={{ clipPath: `inset(${scrollY}px 0px ${containerHeight - clipHeight - scrollY }px 0px)` }} >
-                <WeAre></WeAre>
-                <OurGoal></OurGoal>
-                <Manifesto></Manifesto>
-                <WhyYou></WhyYou>
-                <BookCall></BookCall>
+              <div><WeAre></WeAre></div>
+              <div><WhatWeDoList></WhatWeDoList></div>
+              <div id="OurGoal"><OurGoal></OurGoal></div>
+              <div id="Manifesto"><Manifesto></Manifesto></div>
+              <div id="WhyYou"><WhyYou></WhyYou></div>
+              <div id="BookCall"><BookCall></BookCall></div>
           </div>
         </div>
       </section>

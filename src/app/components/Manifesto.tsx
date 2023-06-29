@@ -2,7 +2,7 @@ import { Reveal } from "./Reveal"
 
 export default function Manifesto(){
     return(
-        <div className="flex flex-col justify-center space-y-[20px]" id="Manifesto">
+        <div className="flex flex-col justify-center space-y-[20px]">
             <Reveal>
                 <h2 className="uppercase stroke_text text-white primary_font lg:text-[26px] text-[18px]">what we stand for</h2>
             </Reveal>
