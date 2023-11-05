@@ -47,7 +47,7 @@ export default function Home() {
     <div className="pt-[5vh] h-screen">
       <div className="fixed">
         <h1 className="uppercase primary_font text-center md:text-[26px] text-[18px] h-[10vh] w-[90vw] mx-auto">
-          CONGRATULATIONS ON YOUR INVITE !
+          CONGRATULATIONS ON YOUR INVITE! 
         </h1>
         <div className="w-screen flex justify-center border_box">
           <div className="border_box_inside border-white border-[1px] rounded-[8px] outline-[50px] h-[80vh] w-[90vw] lg:pl-[120px] md:pl-[80px] pl-[40px] md:pr-[50px] pr-[10px] relative ">
@@ -62,7 +62,7 @@ export default function Home() {
           <div ref={containerRef} className="lg:ml-[80px] space-y-[250px] mb-[150px]"
             style={{ clipPath: `inset(${scrollY}px 0px ${containerHeight - clipHeight - scrollY }px 0px)` }} >
               <div><WeAre></WeAre></div>
-              <div><WhatWeDoList></WhatWeDoList></div>
+              <div><WeAre></WeAre></div>
               <div id="OurGoal"><OurGoal></OurGoal></div>
               <div id="Manifesto"><Manifesto></Manifesto></div>
               <div id="WhyYou"><WhyYou></WhyYou></div>

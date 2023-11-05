@@ -68,9 +68,8 @@ export default function Navbar() {
 
     return (
         <div className="border-b-[1px] border-white absolute w-full left-0 lg:h-[120px] md:h-[80px] h-[40px] flex flex-col justify-center">
-            <p></p>
             <motion.div
-                className="progress-bar lg:h-[120px] md:h-[80px] h-[40px] lg:ml-[120px] md:ml-[80px] "
+                className="progress-bar lg:h-[120px] md:h-[80px] h-[40px] lg:ml-[120px] md:ml-[80px] rounded-tr-[6px]"
                 style={{ scaleX: scrollYProgress }}
             />
             <nav>

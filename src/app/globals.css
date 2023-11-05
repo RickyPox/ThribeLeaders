@@ -50,4 +50,7 @@ html {
     z-index: -10;
 }
 
+span{
+    display: inline-block;
+}
 
